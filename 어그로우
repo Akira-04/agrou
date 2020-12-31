@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>마피아</title>
+        <meta charset="utf-8">
+        <style>
+        h1 {
+          font-size: 45px;
+          text-align: center;
+          border-bottom: 1px solid black;
+          padding: 20px;
+          margin: 0;
+        }
+        </style>
+    </head>
+    <body>
+      <h1>
+      플레이어 수: 11 <br>
+      늑대: 2<br>
+      검은늑대: 1<br>
+      경비병: 1 <br>
+      선견자: 1 <br>
+      커플: 2 (1쌍) <br>
+      독재자: 1 <br>
+      시민: 4 <br>
+    </h1>
+
+            <script>
+            const player = [];
+            const werewolf = ["옥준모", "이윤민"]; //여기 이름을 적습니다.
+            const blackwolf = ["이지훈"]
+            const seer = ["장휘수"]; //여기 지정어를 적습니다.
+            const guard = ["임태강"];
+            const couple = ["최준", "김이안"];
+            const dictator = ["하승현"];
+            const movement = "머리 긁적이기";
+           
+
+
+            function findingArray(nameArray, name) {
+              var nonname = [];
+              for (i = 0; i <nameArray.length; i++) {
+                if (nameArray[i] != name) {
+                  nonname.push(nameArray[i]);
+                }
+              }
+              return nonname;
+            }
+
+            while (true) {
+                var value = window.prompt("자신의 이름 세 글자 또는 두 글자를 적어주세요!");
+                  if (confirm("당신의 이름이 \""+value+"\"가 맞습니까? 하나님이 보고 계십니다. 당신의 손가락의 반지를 보세요.")) {
+                    if (werewolf.includes(value)) {
+                      alert("당신은 늑대 인간입니다. 당신의 동료 늑대는 " +findingArray(werewolf, blackwolf value).toString()+" 입니다. 제시 행동은 \"" +movement+"\" 입니다.");
+                      break;
+                    }
+                    else if (seer.includes(value)){
+                      alert("당신은 선견자입니다. 매일 밤 플레이어 한 명을 지정해 해당 인물의 진짜 직업을 확인할 수 있습니다.");
+                      break;
+                    }
+                    else if (blackwolf.includes(value)){
+                      alert("당신은 검은늑대입니다. 다른 늑대 인간과 함께 목표를 선택하면 자기 턴에 대상을 늑대 인간으로 변형시킬 수 있습니다.이것은 일회성 능력입니다.");
+                      break;
+                    }
+                    else if (guard.includes(value)){
+                      alert("당신은 경비병입니다. 매일 밤, 늑대 인간의 공격으로부터 자신 혹은 다른 시민을 보호할 수 있습니다. 같은 시민을 두 번 연속으로 보호할 수 없습니다.");
+                      break;
+                    }
+                    else if (couple.includes(value)){
+                      alert("당신은 커플입니다. 당신의 짝은 " +findingArray(couple, value).toString()+" 입니다. 예쁜 사랑하세요!");
+                      break;
+                    }
+                    else if (dictator.includes(value)){
+                      alert("당신은 독재자입니다. 원하는 밤에 쿠테타를 하세요. 다음날 아침,생존자 중 한 명을 지정해 죽일 수 있으며 늑대 인간을 죽이면 시장이 됩니다. 시민을 죽였을 경우 바로 사망합니다.");
+                      break;
+                    }
+                    else {
+                      alert("당신은 시민입니다. 재밌게 게임하세요!");
+                      break;
+                    }
+                  } else{
+                    alert("이름을 다시 입력해주세요.");
+                  }
+            }
+
+            </script>
+    </body>
+</html>
