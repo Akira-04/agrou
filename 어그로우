@@ -15,25 +15,25 @@
     </head>
     <body>
       <h1>
-      플레이어 수: 11 <br>
-      늑대: 2<br>
+      플레이어 수: 10 <br>
+      늑대: 1<br>
       검은늑대: 1<br>
       경비병: 1 <br>
       선견자: 1 <br>
       커플: 2 (1쌍) <br>
       독재자: 1 <br>
-      시민: 4 <br>
+      시민: 3 <br>
     </h1>
 
             <script>
             const player = [];
-            const werewolf = ["옥준모", "이윤민"]; //여기 이름을 적습니다.
-            const blackwolf = ["이지훈"]
-            const seer = ["장휘수"]; //여기 지정어를 적습니다.
-            const guard = ["임태강"];
-            const couple = ["최준", "김이안"];
-            const dictator = ["하승현"];
-            const movement = "머리 긁적이기";
+            const werewolf = ["장휘수"]; //여기 이름을 적습니다.
+            const blackwolf = ["최강민"]
+            const seer = ["임태강"]; //여기 지정어를 적습니다.
+            const guard = ["최준"];
+            const couple = ["박준하", "옥준모"];
+            const dictator = ["이지훈"];
+            const movement = "만세";
            
 
 
@@ -49,9 +49,9 @@
 
             while (true) {
                 var value = window.prompt("자신의 이름 세 글자 또는 두 글자를 적어주세요!");
-                  if (confirm("당신의 이름이 \""+value+"\"가 맞습니까? 하나님이 보고 계십니다. 당신의 손가락의 반지를 보세요.")) {
+                  if (confirm("당신의 이름이 \""+value+"\"이/가 맞습니까? 하나님이 보고 계십니다. 당신의 손가락의 반지를 보세요.")) {
                     if (werewolf.includes(value)) {
-                      alert("당신은 늑대 인간입니다. 당신의 동료 늑대는 " +findingArray(werewolf, blackwolf value).toString()+" 입니다. 제시 행동은 \"" +movement+"\" 입니다.");
+                      alert("당신은 늑대 인간입니다. 당신의 동료 늑대는 " +findingArray(blackwolf, value).toString()+" 입니다. 제시 행동은 \"" +movement+"\" 입니다.");
                       break;
                     }
                     else if (seer.includes(value)){
